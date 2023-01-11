@@ -7,7 +7,7 @@ env:
     bot_api: "ENCRYPTED[!afe22e41f387fb3537bbe52da0f11757df72a6ec2188bed3358207c47d2d0e6be1e0e779a03c3a1b9ef4027a00812bfe!]"
     chat_id: "ENCRYPTED[!aa4706c0a2b1e1d9ddbb8f2dca0a252a2ba1f47aa2bf5f55c5172e9a221d15b5de36ed66c60256cf695b5557fd2f206f!]"
     git_cookies: 0
-    clean_build: -1
+    clean_build: 0
     MAIN_REPO: "ENCRYPTED[!949e43c15e420fee01625510514d6307d8565f69997bd8e5ed9d4a769ae149acb263193ddddc9e44d9e1dbad3c4d5e83!]"
     DEVICE_REPO: "ENCRYPTED[!6e05c1c1335add4c5caad76fa1b3abfa7560852b11373354b476d5d3fe5b01d48986f1b689c6886aee9cd6b2537f7c1e!]"
     DEVICE_ORG: "ENCRYPTED[!84fae3d6579e54d69a44812bc5274c736599d30e4c3cb7a550d591303d530c2904c0b219f4fd14d47cbf0094403079b8!]"
@@ -29,7 +29,7 @@ task:
     symc_script:
       - bash sy*
     compile_script:
-      - bash bu* full gh
+      - bash bu* system gh
     upl_script:
       - bash upl* gh
 
