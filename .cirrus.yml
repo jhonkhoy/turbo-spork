@@ -21,8 +21,8 @@ task:
     timeout_in: 120m
     container:
       image: nexgang/ubuntu:latest
-      cpu: 4
-      memory: 16G
+      cpu: 8
+      memory: 32G
     down_background_script:
       - git clone https://$CIRRUS_REPO_OWNER:$github_token@github.com/$CIRRUS_REPO_OWNER/congenial-eureka.git -b wip /tmp/cs
       - mv /tmp/cs/* /tmp/ci
