@@ -30,7 +30,7 @@ fi
 
 # Sync source
 repo init --depth=1 --no-repo-verify -u https://github.com/yaap/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/$MAIN_REPO/local_manifests.git --depth 1 -b yaap .repo/local_manifests
+
 # Sync source without unnecessary messages, try with -j30 first, if fails, it will try again
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
@@ -38,6 +38,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 git clone --depth=1 https://github.com/pwnrazr/device_xiaomi_raphael -b thirteen device/xiaomi/raphael
 git clone --depth=1 https://github.com/pwnrazr/vendor_xiaomi_raphael -b thirteen vendor/xiaomi/raphael
 git clone --depth=1 https://github.com/pwnrazr/kernel_raphael_sm8150 -b dev-pwn kernel/xiaomi/sm8150
+git clone --depth=1 https://github.com/yaap/device_qcom_common -b thirteen device/qcom/common
+git clone --depth=1 https://gitlab.com/yaosp/vendor_qcom_common -b thirteen vendor/qcom/common
 
 . /tmp/ci/function
 tg "$rom_name source sync completed!
