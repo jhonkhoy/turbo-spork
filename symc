@@ -35,8 +35,8 @@ git clone https://github.com/$MAIN_REPO/local_manifests.git --depth 1 -b statix 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # local manifest
-git clone --depth=1 https://$DEVICE_REPO:$DEVICE_TOKEN@github.com/$DEVICE_REPO/android_device_xiaomi_sm8150-common -b 13 device/xiaomi/sm8150-common
-git clone --depth=1 https://$DEVICE_REPO:$DEVICE_TOKEN@github.com/$DEVICE_REPO/android_device_xiaomi_raphael -b 13 device/xiaomi/raphael
+git clone --depth=1 https://$DEVICE_REPO:$DEVICE_TOKEN@github.com/$DEVICE_ORG/android_device_xiaomi_sm8150-common -b 13 device/xiaomi/sm8150-common
+git clone --depth=1 https://$DEVICE_REPO:$DEVICE_TOKEN@github.com/$DEVICE_ORG/android_device_xiaomi_raphael -b 13 device/xiaomi/raphael
 git clone --depth=1 https://$DEVICE_REPO:$DEVICE_TOKEN@github.com/$DEVICE_ORG/android_device_xiaomi_raphael-kernel -b 13 device/xiaomi/raphael-kernel
 
 . /tmp/ci/function
