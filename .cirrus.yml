@@ -30,7 +30,7 @@ task:
     symc_script:
       - bash sy*
     compile_script:
-      - bash bu* full gh
+      - bash bu* half gh
     upl_script:
       - bash upl* gh
 
