@@ -20,14 +20,14 @@ fi
 
 # Sync source
 repo init --depth=1 --no-repo-verify -u https://github.com/AOSPA/manifest -b topaz -g default,-mips,-darwin,-notdefault
-git clone https://github.com/$MAIN_REPO/local_manifests.git --depth 1 -b topaz .repo/local_manifests
+git clone https://github.com/$MAIN_REPO/local_manifests.git --depth 1 -b topaz-test .repo/local_manifests
 # Sync source without unnecessary messages, try with -j30 first, if fails, it will try again
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
 # local manifest
-git clone --depth=1 https://$DEVICE_REPO:$DEVICE_TOKEN@github.com/$DEVICE_REPO/device_xiaomi_raphael -b topaz-staging device/xiaomi/raphael
-git clone --depth=1 https://$DEVICE_REPO:$DEVICE_TOKEN@github.com/$DEVICE_REPO/vendor_xiaomi_raphael -b topaz-staging vendor/xiaomi/raphael
-git clone --depth=1 https://$DEVICE_REPO:$DEVICE_TOKEN@github.com/$DEVICE_ORG/kernel_xiaomi_raphael -b lineage-pa kernel/msm-4.14
+# git clone --depth=1 https://$DEVICE_REPO:$DEVICE_TOKEN@github.com/$DEVICE_REPO/device_xiaomi_raphael -b topaz-staging device/xiaomi/raphael
+# git clone --depth=1 https://$DEVICE_REPO:$DEVICE_TOKEN@github.com/$DEVICE_REPO/vendor_xiaomi_raphael -b topaz-staging vendor/xiaomi/raphael
+# git clone --depth=1 https://$DEVICE_REPO:$DEVICE_TOKEN@github.com/$DEVICE_ORG/kernel_xiaomi_raphael -b lineage-pa kernel/msm-4.14
 
 . /tmp/ci/function
 tg "$rom_name source sync completed!
